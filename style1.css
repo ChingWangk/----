@@ -1,0 +1,524 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.presentation-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: white;
+    box-shadow: 0 0 50px rgba(0,0,0,0.3);
+}
+
+/* 幻灯片容器 */
+.slides-wrapper {
+    width: 500%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
+.slide {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 幻灯片背景装饰 */
+.slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.05;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.slide-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+/* 标题页 */
+.slide-1 {
+    background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+    color: white;
+}
+
+.slide-1::before {
+    background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
+}
+
+.main-title {
+    font-size: 48px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    letter-spacing: 2px;
+}
+
+.sub-title {
+    font-size: 24px;
+    font-weight: 200;
+    opacity: 0.9;
+    margin-bottom: 40px;
+    letter-spacing: 4px;
+}
+
+.company-info {
+    font-size: 18px;
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+/* 项目背景页 */
+.slide-2 {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.section-title {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.background-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.bg-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.bg-card:hover {
+    transform: translateY(-5px);
+}
+
+.bg-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+    font-size: 24px;
+}
+
+.bg-card h4 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.bg-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 数据分析页 */
+.slide-3 {
+    background: linear-gradient(135deg, #da9408 0%, #f0f1a3 100%);
+    color: white;
+}
+
+.data-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 40px;
+    align-items: center;
+}
+
+.data-card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+}
+
+.big-number {
+    font-size: 64px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.number-label {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.number-desc {
+    font-size: 14px;
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+/* 成效展示页 */
+.slide-4 {
+    background: linear-gradient(135deg, #ffecd2 0%, #a0dbac 100%);
+    /* position: relative; */
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+/* 添加叶子背景图片样式 */
+.slide-4::before {
+    content: '';
+    position: absolute;
+    
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../element/树叶子.png'); /* 替换为你的叶子图片路径 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    opacity: 0.25; /* 调整透明度，使其与背景融合 */
+    z-index: 1;
+    pointer-events: none; /* 确保不影响内容的交互 */
+}
+
+
+
+/* 或者使用多个叶子图片的方案 */
+.leaf-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.leaf-bg-1 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    /* background-image: url('../element/bird.png'); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    top: 20%;
+    right: 10%;
+    transform: rotate(15deg);
+    filter: sepia(30%) hue-rotate(80deg) brightness(1.1); /* 调整颜色使其更符合绿色调 */
+}
+
+.leaf-bg-2 {
+    position: absolute;
+    width: 960px;
+    height: 960px;
+    background-image: url('../element/bird.png');
+    background-size: contain;
+    /* background-repeat: no-repeat; */
+    opacity: 0.45;
+    bottom: 0%;
+    left: 0%;
+    /* transform: rotate(-20deg); */
+    filter: sepia(30%) hue-rotate(0deg) brightness(1.1);
+}
+
+.leaf-bg-3 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    /* background-image: url('../element/bird.png'); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    top: 60%;
+    right: 30%;
+    transform: rotate(45deg);
+    filter: sepia(30%) hue-rotate(80deg) brightness(1.1);
+} 
+
+/* 确保内容在叶子背景之上 */
+.slide-content {
+    position: relative;
+    z-index: 2;
+}
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.achievement-item {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.achievement-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 10px;
+}
+
+.achievement-text {
+    font-size: 16px;
+    color: #2c3e50;
+    line-height: 1.5;
+}
+
+/* 总结页 */
+.slide-5 {
+    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.conclusion-content {
+    text-align: left;
+    max-width: 800px;
+}
+
+.conclusion-quote {
+    font-size: 24px;
+    font-style: italic;
+    margin-bottom: 30px;
+    padding: 30px;
+    background: rgba(255,255,255,0.1);
+    border-left: 4px solid #fff;
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+.conclusion-points {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* 导航控制 */
+.navigation {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 100;
+    background: rgba(255,255,255,0.9);
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    backdrop-filter: blur(10px);
+}
+
+.nav-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.nav-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 页面指示器 */
+.slide-indicators {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background: #667eea;
+    transform: scale(1.2);
+}
+
+/* 页码显示 */
+.page-counter {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    background: rgba(255,255,255,0.9);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    color: #666;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+/* 动画类 */
+.slide-enter {
+    animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 键盘提示 */
+.keyboard-hint {
+    position: fixed;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    z-index: 100;
+}
+
+/* 装饰性元素 */
+.decorative-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    animation: gentleFloat 8s ease-in-out infinite;
+}
+
+.shape-1 {
+    width: 120px;
+    height: 120px;
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 80px;
+    height: 80px;
+    top: 70%;
+    right: 15%;
+    animation-delay: 3s;
+}
+
+.shape-3 {
+    width: 150px;
+    height: 150px;
+    top: 40%;
+    right: 25%;
+    animation-delay: 6s;
+}
+
+@keyframes gentleFloat {
+    0%, 100% { transform: translateY(0px) scale(1); opacity: 0.3; }
+    50% { transform: translateY(-30px) scale(1.1); opacity: 0.6; }
+}
+
+/* 渐变文字 */
+.gradient-text {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 响应式调整 */
+@media (max-width: 1200px) {
+    .slide {
+        padding: 40px 60px;
+    }
+    .main-title {
+        font-size: 36px;
+    }
+    .section-title {
+        font-size: 28px;
+    }
+}

@@ -1,0 +1,107 @@
+/* 照片墙背景 */
+.photo-wall-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.photo-wall-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(2px);
+    z-index: 2;
+}
+
+.photo-item {
+    position: absolute;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    opacity: 0.7;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(20%) saturate(0.8);
+}
+
+.photo-item:hover {
+    transform: scale(1.05) rotate(1deg);
+    opacity: 0.9;
+    z-index: 5;
+}
+
+/* 不同尺寸的照片 */
+.photo-large {
+    width: 280px;
+    height: 200px;
+    animation: photoFloat 15s ease-in-out infinite;
+}
+
+.photo-medium {
+    width: 200px;
+    height: 150px;
+    animation: photoFloat 12s ease-in-out infinite;
+}
+
+.photo-small {
+    width: 150px;
+    height: 120px;
+    animation: photoFloat 10s ease-in-out infinite;
+}
+
+.photo-tall {
+    width: 120px;
+    height: 200px;
+    animation: photoFloat 14s ease-in-out infinite;
+}
+
+.photo-wide {
+    width: 250px;
+    height: 130px;
+    animation: photoFloat 13s ease-in-out infinite;
+}
+
+/* 照片位置分布 */
+.photo-1 { top: 5%; left: 5%; animation-delay: 0s; }
+.photo-2 { top: 15%; right: 10%; animation-delay: 2s; }
+.photo-3 { top: 40%; left: 8%; animation-delay: 4s; }
+.photo-4 { top: 35%; right: 15%; animation-delay: 1s; }
+.photo-5 { bottom: 25%; left: 12%; animation-delay: 3s; }
+.photo-6 { bottom: 15%; right: 8%; animation-delay: 5s; }
+.photo-7 { top: 25%; left: 35%; animation-delay: 6s; }
+.photo-8 { bottom: 35%; right: 35%; animation-delay: 7s; }
+.photo-9 { top: 60%; left: 25%; animation-delay: 8s; }
+.photo-10 { top: 10%; left: 60%; animation-delay: 9s; }
+.photo-11 { bottom: 10%; left: 45%; animation-delay: 10s; }
+.photo-12 { top: 70%; right: 25%; animation-delay: 11s; }
+
+@keyframes photoFloat {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg); 
+        opacity: 0.6; 
+    }
+    25% { 
+        transform: translateY(-15px) rotate(1deg); 
+        opacity: 0.8; 
+    }
+    50% { 
+        transform: translateY(-8px) rotate(-0.5deg); 
+        opacity: 0.7; 
+    }
+    75% { 
+        transform: translateY(-20px) rotate(0.5deg); 
+        opacity: 0.9; 
+    }
+}

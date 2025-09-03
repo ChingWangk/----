@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中华新品·细支3mg营场 - 聚力暖心服务</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background: white;
+            box-shadow: 0 0 50px rgba(0,0,0,0.3);
+        }
+
+        /* 幻灯片容器 */
+        .slides-wrapper {
+            width: 900%;
+            height: 100%;
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .slide {
+            width: 11.11%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* 第1页：标题页 - 中华金色主题 */
+        .slide-1 {
+            background: linear-gradient(45deg, #DAA520 0%, #FFD700 50%, #FFA500 100%);
+            color: white;
+        }
+
+        .slide-1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .main-title {
+            font-size: 52px;
+            font-weight: 300;
+            margin-bottom: 25px;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.2);
+            letter-spacing: 3px;
+        }
+
+        .sub-title {
+            font-size: 28px;
+            font-weight: 200;
+            opacity: 0.95;
+            margin-bottom: 50px;
+            letter-spacing: 5px;
+        }
+
+        .company-info {
+            font-size: 20px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* 第2页：服务理念 - 温暖红色 */
+        .slide-2 {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+        }
+
+        .service-motto {
+            font-size: 40px;
+            margin-bottom: 40px;
+            font-weight: 300;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .service-desc {
+            font-size: 16px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* 第3页：品牌展示 - 中华品牌色调 */
+        .slide-3 {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #DAA520 100%);
+            color: white;
+        }
+
+        .brand-showcase {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .brand-product {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            color: #333;
+        }
+
+        .product-image {
+            width: 200px;
+            height: 300px;
+            background: linear-gradient(45deg, #DAA520, #FFD700);
+            border-radius: 12px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .brand-info h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #8B4513;
+        }
+
+        .brand-features {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* 第4页：数据成效 - 清新绿色 */
+        .slide-4 {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .metric-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .metric-number {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .metric-label {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .metric-desc {
+            font-size: 14px;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* 第5页：四维驱动 - 紫色科技感 */
+        .slide-5 {
+            background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+            color: white;
+        }
+
+        .dimension-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .dimension-card {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dimension-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: rotate 8s linear infinite;
+        }
+
+        .dimension-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .dimension-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .dimension-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .dimension-text {
+            font-size: 15px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* 第6页：客户故事 - 温暖橙色 */
+        .slide-6 {
+            background: linear-gradient(135deg, #fab1a0 0%, #e17055 100%);
+            color: white;
+        }
+
+        .story-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+            align-items: center;
+        }
+
+        .story-text {
+            text-align: left;
+            padding: 40px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .story-quote {
+            font-size: 24px;
+            font-style: italic;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .story-author {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .story-visual {
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        /* 第7页：创新举措 - 青春蓝绿 */
+        .slide-7 {
+            background: linear-gradient(135deg, #00cec9 0%, #55a3ff 100%);
+            color: white;
+        }
+
+        .innovation-showcase {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .innovation-item {
+            background: rgba(255,255,255,0.12);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .innovation-emoji {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .innovation-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .innovation-detail {
+            font-size: 14px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* 第8页：未来展望 - 深邃蓝紫 */
+        .slide-8 {
+            background: linear-gradient(135deg, #2d3436 0%, #636e72 50%, #74b9ff 100%);
+            color: white;
+        }
+
+        .future-vision {
+            text-align: left;
+            max-width: 900px;
+        }
+
+        .vision-title {
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .vision-points {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .vision-point {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 16px;
+            border-left: 4px solid #74b9ff;
+        }
+
+        .vision-point h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #74b9ff;
+        }
+
+        .vision-point p {
+            font-size: 16px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* 第9页：致谢页 - 优雅灰金 */
+        .slide-9 {
+            background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+            color: white;
+        }
+
+        .thanks-content {
+            text-align: center;
+        }
+
+        .thanks-title {
+            font-size: 48px;
+            margin-bottom: 30px;
+            font-weight: 300;
+            color: #DAA520;
+        }
+
+        .thanks-text {
+            font-size: 20px;
+            line-height: 1.8;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* 导航控制 */
+        .navigation {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+            background: rgba(255,255,255,0.95);
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-btn {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* 页面指示器 */
+        .slide-indicators {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .indicator.active {
+            background: #667eea;
+            transform: scale(1.3);
+        }
+
+        /* 页码显示 */
+        .page-counter {
+            position: fixed;
+            top: 40px;
+            right: 40px;
+            background: rgba(255,255,255,0.9);
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 16px;
+            color: #666;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            font-weight: 500;
+        }
+
+        /* 通用样式 */
+        .section-title {
+            font-size: 40px;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* 卡片通用样式 */
+        .card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            color: #333;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        /* 装饰性元素 */
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            animation: gentleFloat 12s ease-in-out infinite;
+        }
+
+        .shape-1 { width: 150px; height: 150px; top: 10%; left: 5%; animation-delay: 0s; }
+        .shape-2 { width: 100px; height: 100px; top: 60%; right: 10%; animation-delay: 4s; }
+        .shape-3 { width: 120px; height: 120px; bottom: 20%; left: 15%; animation-delay: 8s; }
+
+        /* 动画定义 */
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0px) scale(1); opacity: 0.3; }
+            50% { transform: translateY(-40px) scale(1.1); opacity: 0.6; }
+        }
+
+        .slide-enter {
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* 数字动画样式 */
+        .animated-number {
+            transition: all 0.3s ease;
+        }
+
+        /* 键盘提示 */
+        .keyboard-hint {
+            position: fixed;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            z-index: 100;
+            background: rgba(0,0,0,0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- 页码计数器 -->
+        <div class="page-counter">
+            <span id="currentPage">1</span> / <span id="totalPages">9</span>
+        </div>
+
+        <!-- 幻灯片容器 -->
+        <div class="slides-wrapper" id="slidesWrapper">
+            <!-- 第1页：标题页 -->
+            <div class="slide slide-1">
+                <div class="floating-elements">
+                    <div class="floating-shape shape-1"></div>
+                    <div class="floating-shape shape-2"></div>
+                    <div class="floating-shape shape-3"></div>
+                </div>
+                <div class="slide-content">
+                    <h1 class="main-title">中华新品·细支3mg营场</h1>
+                    <p class="sub-title">聚力暖心服务 共绘盈利蓝图</p>
+                    <div class="company-info">
+                        杨浦公司"四维驱动"服务升级实践汇报
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第2页：服务理念 -->
+            <div class="slide slide-2">
+                <div class="slide-content">
+                    <h2 class="service-motto">消费者利益至上</h2>
+                    <p style="font-size: 20px; opacity: 0.9; margin-bottom: 20px;">中国烟草·为民服务的初心使命</p>
+                    <div class="service-grid">
+                        <div class="service-card">
+                            <div class="service-icon">🤝</div>
+                            <div class="service-title">客户为中心</div>
+                            <div class="service-desc">把客户的事当自己的事<br>把终端的难当自己的难</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">💝</div>
+                            <div class="service-title">暖心服务</div>
+                            <div class="service-desc">用心倾听客户需求<br>用情解决实际困难</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🌟</div>
+                            <div class="service-title">共同成长</div>
+                            <div class="service-desc">与零售客户同呼吸共命运<br>实现客我共赢良性循环</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🎯</div>
+                            <div class="service-title">精准发力</div>
+                            <div class="service-desc">深入一线扎根终端<br>切实提升盈利满意度</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第3页：品牌展示 -->
+            <div class="slide slide-3">
+                <div class="slide-content">
+                    <h2 class="section-title">享誉全国的上海品牌</h2>
+                    <div class="brand-showcase">
+                        <div class="brand-product">
+                            <div class="product-image">中华</div>
+                            <h3>中华香烟</h3>
+                            <div class="brand-features">
+                                上海烟草集团旗舰产品<br>
+                                中国高端香烟代表品牌<br>
+                                享誉全国的品质象征
+                            </div>
+                        </div>
+                        <div class="brand-info">
+                            <h3 style="color: #DAA520; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                                2025年重磅新品
+                            </h3>
+                            <div style="background: rgba(255,255,255,0.15); padding: 30px; border-radius: 16px; backdrop-filter: blur(10px);">
+                                <h4 style="font-size: 28px; margin-bottom: 20px; color: #FFD700;">中华细支3mg</h4>
+                                <p style="font-size: 18px; line-height: 1.6; opacity: 0.95;">
+                                    ✨ 更细致的口感体验<br>
+                                    🌿 更低的焦油含量<br>
+                                    💎 更精致的包装设计<br>
+                                    🎯 满足消费升级需求
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第4页：服务数据 -->
+            <div class="slide slide-4">
+                <div class="slide-content">
+                    <h2 class="section-title">暖心服务数据一览</h2>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-number animated-number" data-target="93.62">0</div>
+                            <div class="metric-label">客户满意度得分</div>
+                            <div class="metric-desc">持续提升服务品质<br>赢得客户信赖</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-number animated-number" data-target="97.88">0</div>
+                            <div class="metric-label">卷烟订足率(%)</div>
+                            <div class="metric-desc">高于全市平均水平<br>供应保障有力</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-number animated-number" data-target="300">0</div>
+                            <div class="metric-label">宣传覆盖人次</div>
+                            <div class="metric-desc">精准触达目标客群<br>扩大品牌影响</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第5页：四维驱动 -->
+            <div class="slide slide-5">
+                <div class="slide-content">
+                    <h2 class="section-title">四维驱动·精准发力</h2>
+                    <div class="dimension-grid">
+                        <div class="dimension-card">
+                            <div class="dimension-content">
+                                <div class="dimension-icon">🎯</div>
+                                <div class="dimension-title">拓客源</div>
+                                <div class="dimension-text">三区联动打破边界<br>政企商社协同拓客<br>坐商变行商新模式</div>
+                            </div>
+                        </div>
+                        <div class="dimension-card">
+                            <div class="dimension-content">
+                                <div class="dimension-icon">📦</div>
+                                <div class="dimension-title">去库存</div>
+                                <div class="dimension-text">跨界团战激活资源<br>联合品牌联动营销<br>缓解库存压力</div>
+                            </div>
+                        </div>
+                        <div class="dimension-card">
+                            <div class="dimension-content">
+                                <div class="dimension-icon">💼</div>
+                                <div class="dimension-title">减负担</div>
+                                <div class="dimension-text">主动服务降成本<br>智能工具提效率<br>优化流程减负担</div>
+                            </div>
+                        </div>
+                        <div class="dimension-card">
+                            <div class="dimension-content">
+                                <div class="dimension-icon">💪</div>
+                                <div class="dimension-title">强信心</div>
+                                <div class="dimension-text">资源共享增底气<br>培训帮扶提技能<br>结对互助强信心</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第6页：客户故事 -->
+            <div class="slide slide-6">
+                <div class="slide-content">
+                    <h2 class="section-title">客户心声·真情反馈</h2>
+                    <div class="story-container">
+                        <div class="story-text">
+                            <div class="story-quote">
+                                "感谢杨浦公司的暖心服务，从库存积压到销量回升，从迷茫困顿到重拾信心，这份情谊比金子还珍贵！"
+                            </div>
+                            <div class="story-author">—— 李老板，社区便利店店主</div>
+                        </div>
+                        <div class="story-visual">
+                            <div style="font-size: 120px; margin-bottom: 20px;">🏪</div>
+                            <h3 style="font-size: 24px; margin-bottom: 15px;">便民服务联盟</h3>
+                            <p style="font-size: 16px; opacity: 0.9; line-height: 1.6;">
+                                统一价格·统一服务<br>
+                                5家门店抱团发展<br>
+                                为居民提供安心消费
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第7页：创新举措 -->
+            <div class="slide slide-7">
+                <div class="slide-content">
+                    <h2 class="section-title">创新举措·多点开花</h2>
+                    <div class="innovation-showcase">
+                        <div class="innovation-item">
+                            <div class="innovation-emoji">🏪</div>
+                            <div class="innovation-name">银发市集</div>
+                            <div class="innovation-detail">政企联动<br>精准服务中老年客群<br>成交80笔</div>
+                        </div>
+                        <div class="innovation-item">
+                            <div class="innovation-emoji">🎪</div>
+                            <div class="innovation-name">园区地摊</div>
+                            <div class="innovation-detail">商企联动<br>酒类知识宣讲<br>吸引50名消费者</div>
+                        </div>
+                        <div class="innovation-item">
+                            <div class="innovation-emoji">🤝</div>
+                            <div class="innovation-name">便民联盟</div>
+                            <div class="innovation-detail">社企联动<br>5家零售客户组建<br>服务标准化</div>
+                        </div>
+                        <div class="innovation-item">
+                            <div class="innovation-emoji">📱</div>
+                            <div class="innovation-name">数字化升级</div>
+                            <div class="innovation-detail">微信社群管理<br>智能标签打印<br>配送流程优化</div>
+                        </div>
+                        <div class="innovation-item">
+                            <div class="innovation-emoji">🎓</div>
+                            <div class="innovation-name">五彩教学</div>
+                            <div class="innovation-detail">沉浸式培训<br>导师跟踪模式<br>7项结对互助</div>
+                        </div>
+                        <div class="innovation-item">
+                            <div class="innovation-emoji">🎁</div>
+                            <div class="innovation-name">跨界合作</div>
+                            <div class="innovation-detail">利益拼图模式<br>肉制品券洗车券<br>买赠活动增销</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第8页：未来展望 -->
+            <div class="slide slide-8">
+                <div class="slide-content">
+                    <div class="future-vision">
+                        <h2 class="vision-title">未来展望·持续创新</h2>
+                        <div class="vision-points">
+                            <div class="vision-point">
+                                <h4>🚀 服务模式创新</h4>
+                                <p>持续优化"四维驱动"服务体系，探索更多跨界合作可能，让服务创新成为客户盈利增长的强劲动力。</p>
+                            </div>
+                            <div class="vision-point">
+                                <h4>🔧 数字化赋能</h4>
+                                <p>加强智能化工具应用，提升服务效率，通过技术手段为客户减负增效，构建数字化服务新生态。</p>
+                            </div>
+                            <div class="vision-point">
+                                <h4>🤝 深度客户关系</h4>
+                                <p>建立更紧密的客我联系，从交易关系升级为合作伙伴关系，共同应对市场挑战，实现共同发展。</p>
+                            </div>
+                            <div class="vision-point">
+                                <h4>🌱 可持续发展</h4>
+                                <p>坚持绿色经营理念，推广健康消费观念，在服务客户的同时承担社会责任，创造更大价值。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第9页：致谢页 -->
+            <div class="slide slide-9">
+                <div class="slide-content">
+                    <div class="thanks-content">
+                        <h2 class="thanks-title">谢谢聆听</h2>
+                        <div class="thanks-text">
+                            暖心服务永远在路上<br>
+                            让我们携手共创美好未来<br><br>
+                            <span style="color: #DAA520; font-weight: 600;">杨浦公司全体同仁</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 导航按钮 -->
+        <div class="navigation">
+            <button class="nav-btn" id="prevBtn" onclick="previousSlide()">‹</button>
+            <button class="nav-btn" id="nextBtn" onclick="nextSlide()">›</button>
+        </div>
+
+        <!-- 页面指示器 -->
+        <div class="slide-indicators">
+            <div class="indicator active" onclick="goToSlide(0)"></div>
+            <div class="indicator" onclick="goToSlide(1)"></div>
+            <div class="indicator" onclick="goToSlide(2)"></div>
+            <div class="indicator" onclick="goToSlide(3)"></div>
+            <div class="indicator" onclick="goToSlide(4)"></div>
+            <div class="indicator" onclick="goToSlide(5)"></div>
+            <div class="indicator" onclick="goToSlide(6)"></div>
+            <div class="indicator" onclick="goToSlide(7)"></div>
+            <div class="indicator" onclick="goToSlide(8)"></div>
+        </div>
+
+        <!-- 键盘提示 -->
+        <div class="keyboard-hint">
+            使用 ← → 方向键、鼠标滚轮或点击按钮切换页面
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 9;
+        const slidesWrapper = document.getElementById('slidesWrapper');
+        const currentPageSpan = document.getElementById('currentPage');
+        const indicators = document.querySelectorAll('.indicator');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        // 更新导航状态
+        function updateNavigation() {
+            currentPageSpan.textContent = currentSlide + 1;
+            
+            // 更新按钮状态
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+            
+            // 更新指示器
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // 切换到指定幻灯片
+        function goToSlide(slideIndex) {
+            if (slideIndex >= 0 && slideIndex < totalSlides) {
+                currentSlide = slideIndex;
+                const translateX = -slideIndex * (100 / totalSlides); 
+                slidesWrapper.style.transform = `translateX(${translateX}%)`;
+                updateNavigation();
+                
+                // 触发当前幻灯片动画
+                setTimeout(() => {
+                    animateCurrentSlide();
+                }, 200);
+            }
+        }
+
+        // 下一页
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                goToSlide(currentSlide + 1);
+            }
+        }
+
+        // 上一页
+        function previousSlide() {
+            if (currentSlide > 0) {
+                goToSlide(currentSlide - 1);
+            }
+        }
+
+        // 动画化当前幻灯片内容
+        function animateCurrentSlide() {
+            const currentSlideElement = document.querySelector(`.slide:nth-child(${currentSlide + 1})`);
+            const content = currentSlideElement.querySelector('.slide-content');
+            
+            // 重置动画
+            content.style.animation = 'none';
+            content.offsetHeight; // 触发重排
+            content.style.animation = 'slideIn 0.8s ease-out';
+            
+            // 数字动画（在数据页面）
+            if (currentSlide === 3) {
+                setTimeout(() => {
+                    animateNumbers();
+                }, 400);
+            }
+        }
+
+        // 数字动画
+        function animateNumbers() {
+            const animatedNumbers = document.querySelectorAll('.animated-number');
+            animatedNumbers.forEach((element, index) => {
+                const target = parseFloat(element.dataset.target);
+                setTimeout(() => {
+                    animateNumber(element, target, 2000);
+                }, index * 200);
+            });
+        }
+
+        function animateNumber(element, target, duration = 2000) {
+            const start = 0;
+            const startTime = performance.now();
+            
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                const current = start + (target - start) * easeOutQuart;
+                
+                if (target === 97.88) {
+                    element.textContent = current.toFixed(2) + '%';
+                } else if (target === 93.62) {
+                    element.textContent = current.toFixed(2);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            
+            requestAnimationFrame(update);
+        }
+
+        // 键盘导航
+        document.addEventListener('keydown', function(e) {
+            switch(e.key) {
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    previousSlide();
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    nextSlide();
+                    break;
+                case 'Home':
+                    e.preventDefault();
+                    goToSlide(0);
+                    break;
+                case 'End':
+                    e.preventDefault();
+                    goToSlide(totalSlides - 1);
+                    break;
+                case ' ':
+                    e.preventDefault();
+                    nextSlide();
+                    break;
+            }
+        });
+
+        // 鼠标滚轮导航
+        let wheelTimeout;
+        document.addEventListener('wheel', function(e) {
+            e.preventDefault();
+            
+            clearTimeout(wheelTimeout);
+            wheelTimeout = setTimeout(() => {
+                if (e.deltaY > 0) {
+                    nextSlide();
+                } else {
+                    previousSlide();
+                }
+            }, 150);
+        }, { passive: false });
+
+        // 触摸手势支持
+        let startX = 0;
+        let endX = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            startX = e.touches[0].clientX;
+        });
+
+        document.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        }, { passive: false });
+
+        document.addEventListener('touchend', function(e) {
+            endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > 80) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    previousSlide();
+                }
+            }
+        });
+
+        // 全屏切换功能
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F11') {
+                e.preventDefault();
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen();
+                } else {
+                    document.exitFullscreen();
+                }
+            }
+        });
+
+        // 自动播放功能（可选）
+        let autoPlayInterval;
+        let isAutoPlaying = false;
+
+        function toggleAutoPlay() {
+            if (isAutoPlaying) {
+                clearInterval(autoPlayInterval);
+                isAutoPlaying = false;
+            } else {
+                autoPlayInterval = setInterval(() => {
+                    if (currentSlide < totalSlides - 1) {
+                        nextSlide();
+                    } else {
+                        clearInterval(autoPlayInterval);
+                        isAutoPlaying = false;
+                    }
+                }, 5000);
+                isAutoPlaying = true;
+            }
+        }
+
+        // 添加自动播放按钮事件（可通过快捷键P启动）
+        document.addEventListener('keydown', function(e) {
+            if (e.key.toLowerCase() === 'p') {
+                toggleAutoPlay();
+            }
+        });
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            updateNavigation();
+            
+            // 页面加载完成后的入场动画
+            setTimeout(() => {
+                animateCurrentSlide();
+            }, 300);
+            
+            // 添加整体淡入效果
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.6s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // 阻止意外的页面操作
+        window.addEventListener('beforeunload', function() {
+            window.scrollTo(0, 0);
+        });
+
+        // 禁用右键菜单（演示模式）
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // 焦点管理，确保键盘导航正常工作
+        document.addEventListener('click', function() {
+            document.body.focus();
+        });
+
+        // 页面可见性变化时暂停自动播放
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden && isAutoPlaying) {
+                clearInterval(autoPlayInterval);
+                isAutoPlaying = false;
+            }
+        });
+    </script>
+</body>
+</html>
