@@ -55,6 +55,15 @@ function animateCurrentSlide() {
         case 2: // 背景页
             animateBackgroundPage();
             break;
+        case 7: // 知民意页
+            animateSurveyPage();
+            break;
+        case 8: // 观市场页
+            animateMarketPage();
+            break;
+        case 9: // 学政策页
+            animatePolicyPage();
+            break;
         case 3: // 分析页
             animateAnalysisPage();
             break;
@@ -96,16 +105,109 @@ function animateOutlinePage() {
 
 // 背景页动画
 function animateBackgroundPage() {
-    const sections = document.querySelectorAll('.background-section');
-    sections.forEach((section, index) => {
+    const navItems = document.querySelectorAll('.background-nav-item');
+    navItems.forEach((item, index) => {
         setTimeout(() => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateX(-30px)';
-            section.style.transition = 'all 0.6s ease';
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'all 0.6s ease';
             setTimeout(() => {
-                section.style.opacity = '1';
-                section.style.transform = 'translateX(0)';
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
             }, 100);
+        }, index * 200);
+    });
+}
+
+// 知民意页动画
+function animateSurveyPage() {
+    // 动画图表标题
+    const chartTitle = document.querySelector('.chart-title');
+    if (chartTitle) {
+        chartTitle.style.opacity = '0';
+        chartTitle.style.transform = 'translateY(-20px)';
+        setTimeout(() => {
+            chartTitle.style.opacity = '1';
+            chartTitle.style.transform = 'translateY(0)';
+            chartTitle.style.transition = 'all 0.6s ease';
+        }, 200);
+    }
+
+    // 动画柱状图
+    animateBarChart();
+
+    // 动画调研总结
+    const surveySum = document.querySelector('.survey-summary');
+    if (surveySum) {
+        setTimeout(() => {
+            surveySum.style.opacity = '0';
+            surveySum.style.transform = 'translateY(30px)';
+            surveySum.style.transition = 'all 0.6s ease';
+            setTimeout(() => {
+                surveySum.style.opacity = '1';
+                surveySum.style.transform = 'translateY(0)';
+            }, 100);
+        }, 1500);
+    }
+}
+
+// 观市场页动画
+function animateMarketPage() {
+    const marketItems = document.querySelectorAll('.market-item');
+    marketItems.forEach((item, index) => {
+        setTimeout(() => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(-30px)';
+            item.style.transition = 'all 0.6s ease';
+            setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateX(0)';
+            }, 100);
+        }, index * 200);
+    });
+}
+
+// 学政策页动画
+function animatePolicyPage() {
+    const policyItems = document.querySelectorAll('.policy-item');
+    policyItems.forEach((item, index) => {
+        setTimeout(() => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(30px)';
+            item.style.transition = 'all 0.6s ease';
+            setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateX(0)';
+            }, 100);
+        }, index * 200);
+    });
+}
+
+// 柱状图动画
+function animateBarChart() {
+    const chartItems = document.querySelectorAll('.chart-item');
+    chartItems.forEach((item, index) => {
+        const bar = item.querySelector('.chart-bar');
+        const value = parseFloat(bar.getAttribute('data-value'));
+        
+        // 初始状态
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        bar.style.width = '0%';
+        
+        setTimeout(() => {
+            // 显示图表项
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+            item.style.transition = 'all 0.5s ease';
+            
+            // 延迟后开始柱状图动画
+            setTimeout(() => {
+                const maxValue = 100;
+                const widthPercentage = (value / maxValue) * 80; // 最大宽度为80%
+                bar.style.width = widthPercentage + '%';
+                bar.style.transition = 'width 2s ease-out';
+            }, 300);
         }, index * 300);
     });
 }

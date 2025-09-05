@@ -262,7 +262,7 @@ body {
 }
 
 /* 背景页样式 */
-.slide-background {
+.slide-background, .slide-survey, .slide-market, .slide-policy {
     background: linear-gradient(135deg, #da9408 0%, #f0f1a3 100%);
     color: #333;
 }
@@ -306,6 +306,276 @@ body {
     position: absolute;
     left: 0;
     color: #da9408;
+}
+
+/* 背景导航样式 */
+.background-nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.background-nav-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+}
+
+.background-nav-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(31, 38, 135, 0.25);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.background-nav-item .nav-icon {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.background-nav-item h3 {
+    color: #2c3e50;
+    margin: 15px 0 10px 0;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.background-nav-item p {
+    color: #5a6c7d;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+/* 知民意页面样式 */
+.survey-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.chart-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+}
+
+.chart-title {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 1.8em;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.horizontal-bar-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.chart-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.chart-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.chart-label {
+    min-width: 150px;
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.chart-bar-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.chart-bar {
+    height: 30px;
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    min-width: 0;
+    width: 0%;
+}
+
+.chart-bar[data-change*="-"] {
+    background: linear-gradient(90deg, #FF6B6B, #FF8E8E);
+}
+
+.chart-value-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 120px;
+}
+
+.chart-value {
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1.1em;
+}
+
+.chart-change {
+    font-size: 0.9em;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.chart-change.positive {
+    color: #27AE60;
+}
+
+.chart-change.negative {
+    color: #E74C3C;
+}
+
+@keyframes growBar {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.survey-summary {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+}
+
+.survey-summary h3 {
+    color: #2c3e50;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.survey-summary p {
+    color: #5a6c7d;
+    line-height: 1.8;
+    font-size: 1.1em;
+}
+
+/* 观市场页面样式 */
+.market-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.market-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+}
+
+.market-section h3 {
+    color: #2c3e50;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.market-item {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border-left: 4px solid #da9408;
+}
+
+.market-item h4 {
+    color: #2c3e50;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.market-item p {
+    color: #5a6c7d;
+    line-height: 1.8;
+    font-size: 1.05em;
+}
+
+/* 学政策页面样式 */
+.policy-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.policy-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+}
+
+.policy-section h3 {
+    color: #2c3e50;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.policy-item {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border-left: 4px solid #da9408;
+}
+
+.policy-item h4 {
+    color: #2c3e50;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.policy-item p {
+    color: #5a6c7d;
+    line-height: 1.8;
+    font-size: 1.05em;
 }
 
 /* 分析页样式 */
