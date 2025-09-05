@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聚力暖心服务 共绘客户盈利新蓝图</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="presentation-container">
+        <!-- 幻灯片容器 -->
+        <div class="slides-wrapper" id="slidesWrapper">
+            <div class="slide slide-theme">
+                <div class="leaf-background">
+                    <div class="leaf-bg-3"></div>
+                </div>
+                
+                <div class="slide-content">
+                    <h1 class="main-title gradient-text">聚力暖心服务 共绘客户盈利新蓝图</h1>
+                    <p>——杨浦公司"四维驱动"服务升级实践报告</p>
+                    <a href="bg1.html" class="nav-btn">开始查看</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script1.js">
+        // Custom chart draws for this page
+        drawPieChart(document.getElementById('dataChart'), [116, 84], ['下降 (58%)', '其他'], ['#FF6384', '#36A2EB']);
+        drawBarChart(document.getElementById('profitChart'), [115, 71, 64], ['购买金额下降', '价格降低', '成本增加'], ['#FFCE56', '#36A2EB', '#FF6384']);
+        drawBarChart(document.getElementById('inventoryChart'), [99, 90, 63], ['400-600元', '200-400元', '600-800元'], ['#FFCE56', '#36A2EB', '#FF6384']);
+        drawBarChart(document.getElementById('pressureChart'), [135, 100, 87], ['市场环境', '经营成本', '卷烟业务'], ['#FFCE56', '#36A2EB', '#FF6384']);
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聚力暖心服务 共绘客户盈利新蓝图</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="presentation-container">
+        <!-- 幻灯片容器 -->
+        <div class="slides-wrapper" id="slidesWrapper">
+            <div class="slide slide-theme">
+                <div class="leaf-background">
+                    <div class="leaf-bg-3"></div>
+                </div>
+                
+                <div class="slide-content">
+                    <h3>1. 推进“定向”调研，锁定攻坚方向</h3>
+                    <p>为深挖问题症结，杨浦公司聚焦客户盈利情况设计形成专项调研问卷，以区域内满意度较低的零售客户为重点，覆盖全业态、全档位及街道，选取200户代表性客户开展问卷调研，聚焦盈利状况、库存动销、经营成本等核心维度，结果显示存在以下四方面问题：</p>
+                    <ul>
+                        <li>一是卷烟销售不畅。在200份问卷调研中，卷烟销量同比下降的客户有116户，占比58%。具体原因方面，“卷烟消费者数量减少”提及93次，“卷烟消费者购买量减少”提及91次，两项占比均超75%，表明市场需求端收缩是销量下滑的核心症结。</li>
+                        <!-- Dynamic pie chart for 58% decline -->
+                        <div class="chart-container"><canvas id="dataChart" width="400" height="400"></canvas></div>
+                        <li>二是盈利状况堪忧。客户门店盈利能力同比下降的有132户，占比66%。具体原因方面，“消费者购买金额下降”提及115次，占比87.1%，“零售价格降低”提及71次，占比53.8%，“经营成本增加”提及64次，占比48.5%，多重因素叠加导致客户盈利能力显著承压。</li>
+                        <!-- Bar chart for reasons -->
+                        <div class="chart-container"><canvas id="profitChart" width="400" height="400"></canvas></div>
+                        <li>三是库存积压严重。卷烟库存积压客户共139户，占比70%。从卷烟结构看，其中“400-600元/条”价位段积压客户99户，占比71.2%，其次为“200-400元/条”90户，占比64.7%，“600-800元/条”63户，占比45.3%。</li>
+                        <div class="chart-container"><canvas id="inventoryChart" width="400" height="400"></canvas></div>
+                        <li>四是经营压力大增。在问卷调研中，认为门店经营存在较大压力的客户有154户，占比77%。主要原因方面，“市场环境”提及135户，占比87.7%，“经营成本较高”提及100户，占比64.9%，“卷烟经营业务”提及87户，占比56.5%，多重压力源叠加导致客户经营负担显著加重。</li>
+                        <div class="chart-container"><canvas id="pressureChart" width="400" height="400"></canvas></div>
+                    </ul>
+                    <p>调研显示，满意度较低的零售客户多数因盈利状况不佳、卷烟销量下滑、库存积压等问题面临较大经营压力，导致后续经营信心不足、满意度偏低。</p>
+                    <button class="back-btn" onclick="window.location.href='problem-analysis.html'">返回问题分析</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script1.js"></script>
+    <script>
+        // Custom chart draws for this page
+        drawPieChart(document.getElementById('dataChart'), [116, 84], ['下降 (58%)', '其他'], ['#FF6384', '#36A2EB']);
+        drawBarChart(document.getElementById('profitChart'), [115, 71, 64], ['购买金额下降', '价格降低', '成本增加'], ['#FFCE56', '#36A2EB', '#FF6384']);
+        drawBarChart(document.getElementById('inventoryChart'), [99, 90, 63], ['400-600元', '200-400元', '600-800元'], ['#FFCE56', '#36A2EB', '#FF6384']);
+        drawBarChart(document.getElementById('pressureChart'), [135, 100, 87], ['市场环境', '经营成本', '卷烟业务'], ['#FFCE56', '#36A2EB', '#FF6384']);
+    </script>
+</body>
+</html>
