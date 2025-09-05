@@ -73,28 +73,148 @@
                 <div class="slide-content">
                     <h1 class="section-title">项目背景</h1>
                     <div class="background-content">
-                        <div class="background-section">
-                            <h3>市场环境</h3>
-                            <ul>
-                                <li>烟草行业数字化转型加速</li>
-                                <li>客户服务需求日益多元化</li>
-                                <li>竞争格局日趋激烈</li>
-                                <li>客户期望值不断提升</li>
-                            </ul>
-                        </div>
-                        <div class="background-section">
-                            <h3>客户需求洞察</h3>
-                            <ul>
-                                <li>个性化服务需求增长</li>
-                                <li>便捷高效的沟通渠道</li>
-                                <li>专业化的解决方案</li>
-                                <li>持续的价值创造</li>
-                            </ul>
+                        <div class="background-nav">
+                            <div class="background-nav-item" onclick="goToSlide(7)">
+                                <div class="nav-icon">👥</div>
+                                <h3>知民意</h3>
+                                <p>客户满意度调研分析</p>
+                            </div>
+                            <div class="background-nav-item" onclick="goToSlide(8)">
+                                <div class="nav-icon">📈</div>
+                                <h3>观市场</h3>
+                                <p>市场环境现状分析</p>
+                            </div>
+                            <div class="background-nav-item" onclick="goToSlide(9)">
+                                <div class="nav-icon">📋</div>
+                                <h3>学政策</h3>
+                                <p>行业政策解读</p>
+                            </div>
                         </div>
                     </div>
                     <div class="nav-section">
                         <button class="back-btn" onclick="goToSlide(1)">返回大纲</button>
                         <button class="nav-section-btn" onclick="goToSlide(3)">问题分析</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 知民意页 -->
+            <div class="slide slide-survey">
+                <div class="leaf-bg-3"></div>
+                <div class="slide-content">
+                    <h1 class="section-title">知民意</h1>
+                    <div class="survey-content">
+                        <div class="chart-section">
+                            <h2 class="chart-title">批发服务细分指标情况</h2>
+                            <div class="horizontal-bar-chart" id="horizontalBarChart">
+                                <div class="chart-item">
+                                    <div class="chart-label">卷烟经营盈利水平</div>
+                                    <div class="chart-bar-container">
+                                        <div class="chart-bar" data-value="92.32" data-change="-1.79"></div>
+                                        <div class="chart-value-info">
+                                            <span class="chart-value">92.32%</span>
+                                            <span class="chart-change negative">-1.79%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chart-item">
+                                    <div class="chart-label">卷烟供应</div>
+                                    <div class="chart-bar-container">
+                                        <div class="chart-bar" data-value="92.53" data-change="1.22"></div>
+                                        <div class="chart-value-info">
+                                            <span class="chart-value">92.53%</span>
+                                            <span class="chart-change positive">+1.22%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chart-item">
+                                    <div class="chart-label">客户服务</div>
+                                    <div class="chart-bar-container">
+                                        <div class="chart-bar" data-value="96.67" data-change="-0.80"></div>
+                                        <div class="chart-value-info">
+                                            <span class="chart-value">96.67%</span>
+                                            <span class="chart-change negative">-0.80%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chart-item">
+                                    <div class="chart-label">卷烟销售平台</div>
+                                    <div class="chart-bar-container">
+                                        <div class="chart-bar" data-value="94.28" data-change="2.16"></div>
+                                        <div class="chart-value-info">
+                                            <span class="chart-value">94.28%</span>
+                                            <span class="chart-change positive">+2.16%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="survey-summary">
+                            <h3>调研结果分析</h3>
+                            <p>通过对客户满意度的深入调研，我们发现客户服务满意度最高，达到96.67%，但相比去年有轻微下降。卷烟销售平台满意度提升显著，同比增长2.16%，显示出数字化服务的积极效果。</p>
+                        </div>
+                    </div>
+                    <div class="nav-section">
+                        <button class="back-btn" onclick="goToSlide(2)">返回项目背景</button>
+                        <button class="nav-section-btn" onclick="goToSlide(8)">观市场</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 观市场页 -->
+            <div class="slide slide-market">
+                <div class="leaf-bg-3"></div>
+                <div class="slide-content">
+                    <h1 class="section-title">观市场</h1>
+                    <div class="market-content">
+                        <div class="market-section">
+                            <h3>市场环境分析</h3>
+                            <div class="market-item">
+                                <h4>行业发展趋势</h4>
+                                <p>烟草行业正经历深刻变革，数字化转型成为主要驱动力，客户需求日益多元化和个性化。</p>
+                            </div>
+                            <div class="market-item">
+                                <h4>竞争格局</h4>
+                                <p>市场竞争日趋激烈，服务质量和客户体验成为核心竞争要素。</p>
+                            </div>
+                            <div class="market-item">
+                                <h4>客户期望</h4>
+                                <p>客户对服务效率、专业程度和便捷性的期望值不断提升。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-section">
+                        <button class="back-btn" onclick="goToSlide(7)">知民意</button>
+                        <button class="nav-section-btn" onclick="goToSlide(9)">学政策</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 学政策页 -->
+            <div class="slide slide-policy">
+                <div class="leaf-bg-3"></div>
+                <div class="slide-content">
+                    <h1 class="section-title">学政策</h1>
+                    <div class="policy-content">
+                        <div class="policy-section">
+                            <h3>行业政策导向</h3>
+                            <div class="policy-item">
+                                <h4>数字化转型政策</h4>
+                                <p>国家烟草专卖局大力推进行业数字化转型，要求各级单位加快信息化建设步伐。</p>
+                            </div>
+                            <div class="policy-item">
+                                <h4>服务质量提升</h4>
+                                <p>强调以客户为中心的服务理念，持续提升服务质量和客户满意度。</p>
+                            </div>
+                            <div class="policy-item">
+                                <h4>创新发展要求</h4>
+                                <p>鼓励各单位在服务模式、管理方式等方面积极创新，探索发展新路径。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-section">
+                        <button class="back-btn" onclick="goToSlide(8)">观市场</button>
+                        <button class="nav-section-btn" onclick="goToSlide(2)">返回项目背景</button>
                     </div>
                 </div>
             </div>
